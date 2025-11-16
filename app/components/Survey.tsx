@@ -9,110 +9,82 @@ const surveys = {
   patients: [
     {
       id: 'price-1',
-      text: 'Какую цену вы считаете приемлемой за беспроводную инсулиновую помпу?',
+      text: 'Какую цену вы считаете приемлемой за инсулиновую помпу?',
       type: 'multiple-choice' as const,
-      options: ['35 000 ₽', '40 000 ₽', '45 000 ₽', '50 000 ₽'],
-    },
-    {
-      id: 'price-important',
-      text: 'Насколько для вас важна стоимость устройства по сравнению с его инновационными функциями?',
-      type: 'rating' as const,
-      maxRating: 5,
-      labels: ['Совсем не важно', 'Крайне важно'],
-    },
-    {
-      id: 'app-comfort',
-      text: 'Насколько удобным вы считаете управление помпой через мобильное приложение?',
-      type: 'rating' as const,
-      maxRating: 5,
-      labels: ['Очень неудобно', 'Очень удобно'],
-    },
-    {
-      id: 'wireless-important',
-      text: 'Насколько важно для вас наличие беспроводного решения по сравнению с традиционной помпой?',
-      type: 'rating' as const,
-      maxRating: 5,
-      labels: ['Совсем не важно', 'Крайне важно'],
-    },
-    {
-      id: 'innovation',
-      text: 'Насколько инновационной вы считаете идею беспроводной инсулиновой помпы?',
-      type: 'rating' as const,
-      maxRating: 5,
-      labels: ['Совсем не инновационна', 'Очень инновационна'],
+      options: ['40 000 ₽', '45 000 ₽', '50 000 ₽', '55 000 ₽'],
     },
     {
       id: 'switch-from-pen',
-      text: 'Готовы ли перейти со шприц-ручки на инсулиновую помпу?',
+      text: 'Готовы ли вы перейти со шприц-ручки на инсулиновую помпу?',
       type: 'multiple-choice' as const,
       options: ['Да', 'Нет', 'Вопрос в цене'],
     },
     {
-      id: 'purchase-interest',
-      text: 'Купили бы вы такое устройство, если бы оно было доступно сегодня?',
+      id: 'purchase-difficulties',
+      text: 'Испытываете ли сложности в покупке устройств для диабетиков?',
       type: 'multiple-choice' as const,
-      options: ['Да', 'Возможно', 'Нет'],
+      options: ['Да', 'Нет', 'Периодически'],
     },
     {
-      id: 'purchase-factors',
-      text: 'Что могло бы убедить вас приобрести помпу?',
-      type: 'multiple-choice' as const,
-      options: ['Цена', 'Дизайн', 'Функции', 'Рекомендации врачей'],
-    },
-    {
-      id: 'design-importance',
-      text: 'Насколько вам важен современный и эстетичный дизайн устройства?',
+      id: 'app-comfort',
+      text: 'Насколько удобно было бы управление инсулиновой помпой через телефон?',
       type: 'rating' as const,
       maxRating: 5,
-      labels: ['Совсем не важен', 'Очень важен'],
+      labels: ['Совсем не удобно', 'Очень удобно'],
     },
     {
-      id: 'design-critical',
-      text: 'Какие элементы дизайна для вас наиболее критичны?',
+      id: 'purchase-interest',
+      text: 'Купили бы данное решение если бы оно было в продаже?',
       type: 'multiple-choice' as const,
-      options: ['Компактность', 'Легкость', 'Цветовое оформление', 'Все вышеперечисленное'],
+      options: ['Да', 'Нет', 'Вопрос в цене'],
+    },
+    {
+      id: 'acceptable-price',
+      text: 'При какой цене вы бы пользовались данным решением?',
+      type: 'multiple-choice' as const,
+      options: ['35 000 ₽', '40 000 ₽', '45 000 ₽', '50 000 ₽'],
     },
   ],
   innovators: [
     {
-      id: 'innovation-level',
-      text: 'Насколько инновационной вы считаете идею беспроводной инсулиновой помпы?',
+      id: 'interest-level',
+      text: 'Насколько вам интересна информация о беспроводной инсулиновой помпе?',
       type: 'rating' as const,
       maxRating: 5,
-      labels: ['Совсем не инновационна', 'Очень инновационна'],
+      labels: ['Совсем не интересна', 'Очень интересна / инновационна'],
     },
     {
-      id: 'tech-interest',
-      text: 'Интересуют ли вас технологические аспекты (AI, адаптивные алгоритмы)?',
+      id: 'potential-vision',
+      text: 'Видите ли вы потенциал в создании медицинского устройства, сочетающего современные технологии и функции инсулиновой помпы?',
       type: 'rating' as const,
       maxRating: 5,
-      labels: ['Совсем не интересуют', 'Очень интересуют'],
+      labels: ['Совсем не вижу потенциала', 'Высокий инновационный потенциал'],
     },
     {
-      id: 'market-potential',
-      text: 'Видите ли вы потенциал этого продукта на рынке?',
+      id: 'recommendation',
+      text: 'Порекомендовали бы вы такое устройство знакомым, живущим с диабетом?',
       type: 'multiple-choice' as const,
-      options: ['Высокий', 'Средний', 'Низкий'],
+      options: ['Да', 'Нет', 'Отправил(а) бы ссылку на сайт для ознакомления'],
     },
   ],
   investors: [
     {
-      id: 'market-size',
-      text: 'Как вы оцениваете размер потенциального рынка?',
+      id: 'presentation-interest',
+      text: 'Заинтересовали ли вас презентация продукта?',
       type: 'multiple-choice' as const,
-      options: ['Мультимиллиардный', 'Многомиллионный', 'Нишевый', 'Недостаточно информации'],
+      options: ['Да', 'Нет', 'Остались вопросы'],
+    },
+    {
+      id: 'cooperation-potential',
+      text: 'Видите ли вы потенциал в сотрудничестве?',
+      type: 'multiple-choice' as const,
+      options: ['Да', 'Нет', 'Только после личного контакта'],
     },
     {
       id: 'investment-interest',
       text: 'Заинтересованы ли вы в инвестировании в проект?',
       type: 'multiple-choice' as const,
-      options: ['Да', 'Возможно', 'Нет'],
-    },
-    {
-      id: 'roi-expectations',
-      text: 'Какой ROI вы ожидаете за 5 лет?',
-      type: 'multiple-choice' as const,
-      options: ['> 200%', '100-200%', '50-100%', '< 50%'],
+      options: ['Да', 'Нет', 'Только при получении финансовых показателей'],
     },
   ],
 };
@@ -140,7 +112,6 @@ export default function Survey() {
     if (currentQuestionIndex < surveys[selectedGroup!].length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      // ПОСЛЕДНИЙ ВОПРОС - СОХРАНЯЕМ
       saveSurveyResponses({
         ...responses,
         [currentQuestion.id]: answer,
@@ -148,7 +119,6 @@ export default function Survey() {
     }
   };
 
-  // ✅ НОВАЯ ФУНКЦИЯ - СОХРАНЯЕТ ОТВЕТЫ
   const saveSurveyResponses = async (finalResponses: { [key: string]: string | number }) => {
     setIsSaving(true);
     try {
@@ -165,7 +135,6 @@ export default function Survey() {
       if (!response.ok) throw new Error('Failed to save');
 
       setShowThankYou(true);
-      console.log('✅ Ответы сохранены!', finalResponses);
 
       setTimeout(() => {
         setSelectedGroup(null);
@@ -176,7 +145,7 @@ export default function Survey() {
       }, 3000);
     } catch (error) {
       console.error('❌ Ошибка при сохранении:', error);
-      alert('Ошибка при сохранении ответов. Попробуй еще раз.');
+      alert('Ошибка при сохранении ответов. Попробуйте еще раз.');
       setIsSaving(false);
     }
   };
@@ -265,8 +234,9 @@ export default function Survey() {
               <motion.button
                 key={group.key}
                 onClick={() => handleGroupSelect(group.key as UserGroup)}
-                className="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all text-left border-2 border-slate-200 hover:border-blue-500"
+                className="p-8 bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg hover:shadow-2xl transition-all text-left border-2 border-blue-200 hover:border-blue-500 hover:scale-105"
                 whileHover={{ y: -5 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <div className="text-4xl mb-4">{group.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -289,7 +259,6 @@ export default function Survey() {
   return (
     <section className="w-full min-h-screen bg-gradient-to-b from-slate-50 to-blue-50 py-20 px-4 md:px-6 flex items-center justify-center">
       <div className="max-w-2xl w-full">
-        {/* Progress bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-3">
             <span className="text-sm font-semibold text-slate-900">
@@ -301,7 +270,7 @@ export default function Survey() {
           </div>
           <motion.div className="h-3 bg-slate-300 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-blue-500"
+              className="h-full bg-gradient-to-r from-blue-500 to-blue-600"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5 }}
@@ -316,7 +285,7 @@ export default function Survey() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-6 md:space-y-8"
+            className="bg-white rounded-xl shadow-xl p-6 md:p-8 space-y-6 md:space-y-8"
           >
             <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-relaxed">
               {currentQuestion.text}
@@ -329,9 +298,9 @@ export default function Survey() {
                     key={option}
                     onClick={() => handleAnswer(option)}
                     disabled={isSaving}
-                    className="p-4 border-2 border-slate-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all text-left font-semibold text-slate-900 hover:text-blue-600 disabled:opacity-50"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-lg hover:border-blue-600 hover:bg-gradient-to-br hover:from-blue-100 hover:to-blue-200 transition-all text-left font-semibold text-slate-900 hover:text-blue-700 disabled:opacity-50 hover:shadow-lg"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                   >
                     {option}
                   </motion.button>
@@ -347,7 +316,7 @@ export default function Survey() {
                       key={i}
                       onClick={() => handleAnswer(i + 1)}
                       disabled={isSaving}
-                      className="flex-1 h-14 md:h-16 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-lg md:text-xl font-bold text-slate-900 disabled:opacity-50"
+                      className="flex-1 h-14 md:h-16 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 hover:border-blue-600 hover:bg-gradient-to-br hover:from-blue-100 hover:to-blue-200 transition-all text-lg md:text-xl font-bold text-slate-900 disabled:opacity-50 hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

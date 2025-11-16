@@ -36,13 +36,6 @@ const features = [
   },
 ];
 
-const uniquePoints = [
-  'Беспроводная архитектура — управление через мобильное приложение',
-  'Адаптивные алгоритмы подачи инсулина на основе AI',
-  'Доступная цена для российского рынка',
-  'Полная поддержка локализации и русского интерфейса',
-];
-
 export default function Features() {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -113,32 +106,17 @@ export default function Features() {
 
         {/* Уникальность проекта - БЕЗ БОЛЬШИХ ОТСТУПОВ */}
         <motion.div
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
         >
-          <h3 className="text-3xl font-bold mb-8 text-center">
-            Уникальность проекта
+          <h3 className="text-3xl font-bold mb-6">
+            🚀 Уникальность проекта
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {uniquePoints.map((point, i) => (
-              <motion.div
-                key={i}
-                className="flex items-start space-x-4"
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.9 + i * 0.1 }}
-              >
-                <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-5 h-5 text-blue-600 font-bold" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-lg leading-relaxed">{point}</span>
-              </motion.div>
-            ))}
-          </div>
+          <p className="text-2xl font-semibold leading-relaxed">
+            Адаптивные алгоритмы анализа и подачи инсулина, обученные на машинном обучении
+          </p>
         </motion.div>
       </div>
     </section>
