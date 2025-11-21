@@ -3,31 +3,36 @@ export default function Footer() {
     <footer className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-center">
-          {/* Контакты */}
+          {/* Email слева - копируемый текст, большой шрифт, без эмоджи */}
           <div className="text-center md:text-left">
-            <a 
-              href="mailto:mishatkinmedical@gmail.com"
-              className="text-lg font-semibold hover:text-blue-400 transition"
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText('mishatkinmedical@gmail.com');
+                alert('Email скопирован в буфер обмена!');
+              }}
+              className="inline-block text-base md:text-lg font-semibold text-slate-300 hover:text-white transition rounded-lg hover:bg-slate-700 px-3 py-2"
+              title="Нажми чтобы скопировать"
             >
               mishatkinmedical@gmail.com
-            </a>
+            </button>
           </div>
 
-          {/* Лого в центре */}
-          <div className="text-center">
-            <p className="text-sm text-slate-400">MishatkinMedical</p>
-          </div>
-
-          {/* Телеграм */}
-          <div className="text-center md:text-right">
+          {/* Телеграм в центре - БОЛЬШАЯ иконка */}
+          <div className="text-center flex justify-center">
             <a 
-              href="https://t.me/vm10_official"
+              href="https://t.me/mishatkin_medical"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-lg font-semibold hover:text-blue-400 transition"
+              className="w-12 h-12 flex items-center justify-center hover:opacity-80 transition transform hover:scale-110"
+              title="Присоединиться к Telegram"
             >
-              <span></span> @vm10_official
+              <img src="/assets/telegram.svg" alt="Telegram" className="w-10 h-10" />
             </a>
+          </div>
+
+          {/* Лого справа */}
+          <div className="text-center md:text-right">
+            <p className="text-sm text-slate-300">MishatkinMedical</p>
           </div>
         </div>
 

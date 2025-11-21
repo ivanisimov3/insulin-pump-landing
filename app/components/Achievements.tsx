@@ -25,7 +25,7 @@ export default function Achievements() {
     <section className="py-20 px-6 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-16">
-          🏆 Достижения
+          Достижения
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -47,7 +47,7 @@ export default function Achievements() {
           <div className="md:col-span-1 flex items-center justify-center">
             <div className="relative w-40 h-40">
               <Image
-                src="/assets/academy-innovators-logo.png"
+                src="/assets/academy-innovators-logo1.jpg"
                 alt="Академия Инноваторов"
                 fill
                 className="object-contain drop-shadow-lg"

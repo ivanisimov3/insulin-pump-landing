@@ -135,14 +135,8 @@ export default function Survey() {
       if (!response.ok) throw new Error('Failed to save');
 
       setShowThankYou(true);
-
-      setTimeout(() => {
-        setSelectedGroup(null);
-        setShowThankYou(false);
-        setCurrentQuestionIndex(0);
-        setResponses({});
-        setIsSaving(false);
-      }, 3000);
+      setIsSaving(false);
+      // Спасибо остаётся открыто, пока пользователь не нажмет крестик или вне окна
     } catch (error) {
       console.error('❌ Ошибка при сохранении:', error);
       alert('Ошибка при сохранении ответов. Попробуйте еще раз.');
@@ -158,18 +152,36 @@ export default function Survey() {
     }
   };
 
-  if (showThankYou) {
+      if (showThankYou) {
+    const closeModal = () => {
+      setSelectedGroup(null);
+      setShowThankYou(false);
+      setCurrentQuestionIndex(0);
+      setResponses({});
+      setIsSaving(false);
+    };
+
     return (
       <motion.div
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        onClick={closeModal}
       >
         <motion.div
-          className="bg-white rounded-2xl p-12 text-center max-w-md mx-4"
+          className="bg-white rounded-2xl p-12 text-center max-w-md mx-4 relative"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
+          onClick={(e) => e.stopPropagation()}
         >
+          {/* Кнопка закрытия (крестик) */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition"
+          >
+            <span className="text-2xl font-bold text-gray-600">×</span>
+          </button>
+
           <motion.div
             className="text-6xl mb-4"
             animate={{ rotate: 360 }}
@@ -180,13 +192,52 @@ export default function Survey() {
           <h3 className="text-2xl font-bold text-slate-900 mb-2">
             Спасибо за ответы!
           </h3>
-          <p className="text-slate-700">
+          <p className="text-slate-700 mb-8">
             Ваше мнение очень важно для нас.
           </p>
+
+          {/* Контакты */}
+          <div className="space-y-4 mb-6">
+            {/* Телеграм - иконка без фона */}
+            <a
+              href="https://t.me/mishatkin_medical"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 hover:scale-125 transition transform"
+              title="Присоединиться к Telegram"
+            >
+              <img
+                src="/assets/telegram.svg"
+                alt="Telegram"
+                className="w-10 h-10"
+              />
+            </a>
+
+            {/* Email для инвесторов - просто текст, без фона */}
+            {selectedGroup === 'investors' && (
+              <div>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText('mishatkinmedical@gmail.com');
+                    alert('Email скопирован в буфер обмена!');
+                  }}
+                  className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition"
+                  title="Нажми чтобы скопировать"
+                >
+                  mishatkinmedical@gmail.com
+                </button>
+              </div>
+            )}
+          </div>
+
         </motion.div>
       </motion.div>
     );
   }
+
+
+
+
 
   if (!selectedGroup) {
     return (

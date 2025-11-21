@@ -2,7 +2,7 @@
 
 export default function ProductDemo() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="product-demo" className="w-full bg-white py-16 md:py-24">
       {/* Заголовок и описание */}
       <div className="max-w-4xl mx-auto text-center px-4 md:px-6 mb-12 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
